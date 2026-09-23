@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "name": "support-routing",
+  "model": "jev-1.13.0",
+  "questions": {
+    "team": {
+      "type": "choice",
+      "instructions": "Which single team should primarily handle this request?",
+      "criteria": {
+        "billing": "Payments, invoices, charges, or refunds",
+        "technical": "Product failure, bug, outage, or integration issue",
+        "review": "Insufficient evidence or no suitable team"
+      }
+    },
+    "refund": {
+      "type": "noul",
+      "instructions": "Is the customer explicitly asking for a refund?",
+      "criteria": {
+        "true": "A refund or reversal is directly requested",
+        "false": "No direct refund or reversal request"
+      }
+    }
+  },
+  "policy": {
+    "minConfidence": 0.8,
+    "minMargin": 0.15,
+    "maxStateCharacters": 50000
+  }
+}

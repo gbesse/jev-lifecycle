@@ -1,0 +1,6 @@
+{
+  "ticket": {
+    "subject": "Duplicate charge",
+    "message": "My card was charged twice. Please refund the duplicate."
+  }
+}

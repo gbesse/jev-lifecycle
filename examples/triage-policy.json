@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "name": "support-v1",
+  "model": "jev-1.13.0",
+  "mode": "shadow",
+  "teams": {
+    "billing": "Payments, invoices, charges, or refunds",
+    "technical": "Product failure, bug, outage, or integration issue",
+    "success": "How-to guidance, onboarding, or account usage",
+    "review": "Insufficient evidence, several equally necessary teams, or exceptional handling"
+  },
+  "minTeamConfidence": 0.8,
+  "minUrgencyConfidence": 0.7,
+  "highValueAmount": 250,
+  "staleAfterHours": 48,
+  "maxTextCharacters": 50000,
+  "reviewTeam": "review"
+}

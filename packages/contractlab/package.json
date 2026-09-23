@@ -1,0 +1,25 @@
+{
+  "name": "@gbesse/jev-contractlab",
+  "version": "0.1.0",
+  "description": "Lint, fingerprint, mutate, and regression-test Jev decision contracts.",
+  "type": "module",
+  "bin": { "jev-contract": "dist/cli.js" },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "coverage": "node --import tsx --experimental-test-coverage --test-coverage-lines=70 --test-coverage-functions=80 --test test/*.test.ts",
+    "prepack": "npm run build"
+  },
+  "engines": { "node": ">=22" },
+  "repository": { "type": "git", "url": "git+https://github.com/gbesse/jev-lifecycle.git", "directory": "packages/contractlab" },
+  "bugs": { "url": "https://github.com/gbesse/jev-lifecycle/issues" },
+  "homepage": "https://github.com/gbesse/jev-lifecycle/tree/main/packages/contractlab#readme",
+  "keywords": ["jev", "typesafe", "testing", "semantic-contract", "ai-evaluation"],
+  "license": "MIT",
+  "publishConfig": { "access": "public" }
+}

@@ -1,0 +1,5 @@
+{"id":"1","scores":{"refund":0.93,"fraud":0.18,"technical":0.12},"labels":["refund"]}
+{"id":"2","scores":{"refund":0.81,"fraud":0.74,"technical":0.10},"labels":["refund","fraud"]}
+{"id":"3","scores":{"refund":0.12,"fraud":0.88,"technical":0.20},"labels":["fraud"]}
+{"id":"4","scores":{"refund":0.18,"fraud":0.14,"technical":0.91},"labels":["technical"]}
+{"id":"5","scores":{"refund":0.09,"fraud":0.08,"technical":0.12},"labels":[]}

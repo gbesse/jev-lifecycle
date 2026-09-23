@@ -1,0 +1,25 @@
+{
+  "name": "@gbesse/jev-triageops",
+  "version": "0.1.0",
+  "description": "Confidence-gated support triage with deterministic policy, shadow mode, audit, and human review.",
+  "type": "module",
+  "bin": { "jev-triageops": "dist/cli.js" },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "coverage": "node --import tsx --experimental-test-coverage --test-coverage-lines=70 --test-coverage-functions=80 --test test/*.test.ts",
+    "prepack": "npm run build"
+  },
+  "engines": { "node": ">=22" },
+  "repository": { "type": "git", "url": "git+https://github.com/gbesse/jev-lifecycle.git", "directory": "packages/triageops" },
+  "bugs": { "url": "https://github.com/gbesse/jev-lifecycle/issues" },
+  "homepage": "https://github.com/gbesse/jev-lifecycle/tree/main/packages/triageops#readme",
+  "keywords": ["jev", "support", "triage", "human-review", "decision-model"],
+  "license": "MIT",
+  "publishConfig": { "access": "public" }
+}

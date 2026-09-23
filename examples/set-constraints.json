@@ -1,0 +1,7 @@
+{
+  "parents": {
+    "refund": "customer_request",
+    "fraud": "risk"
+  },
+  "maxLabels": 4
+}

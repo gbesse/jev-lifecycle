@@ -1,0 +1,11 @@
+{
+  "id": "T-1001",
+  "subject": "Duplicate card charge",
+  "receivedAt": "2026-09-22T08:00:00Z",
+  "amount": 320,
+  "currency": "EUR",
+  "customer": { "id": "C-42", "tier": "business", "locale": "fr" },
+  "messages": [
+    { "author": "customer", "text": "Ma carte a été débitée deux fois. Merci de rembourser le doublon." }
+  ]
+}
