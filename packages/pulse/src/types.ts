@@ -43,3 +43,38 @@ export type PulseReport = {
   byModel: Record<string, { count: number; accuracy: number | null; meanConfidence: number | null }>;
   bySlice: Record<string, Record<string, { count: number; accuracy: number | null }>>;
 };
+
+export type ThresholdPoint = {
+  threshold: number;
+  accepted: number;
+  reviewed: number;
+  labeledAccepted: number;
+  errors: number;
+  coverage: number;
+  selectiveAccuracy: number | null;
+  accuracyLowerBound95: number | null;
+  expectedCost: number;
+};
+
+export type ThresholdOptions = {
+  targetAccuracy?: number;
+  minCoverage?: number;
+  step?: number;
+  quantization?: number;
+  quantizationMode?: "raw" | "conservative";
+  confidenceMode?: "observed" | "wilson";
+  costs?: { accepted?: number; review?: number; falseAccept?: number };
+};
+
+export type ThresholdRecommendation = {
+  schemaVersion: 1;
+  labeledEvents: number;
+  targetAccuracy: number;
+  minCoverage: number;
+  quantization: number;
+  quantizationMode: "raw" | "conservative";
+  confidenceMode: "observed" | "wilson";
+  selected: ThresholdPoint | null;
+  reason: "recommended" | "no-labeled-confidence" | "no-feasible-threshold";
+  frontier: ThresholdPoint[];
+};

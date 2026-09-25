@@ -52,3 +52,36 @@ export type DecisionResponse = {
   model: string;
   answers: Record<string, ComparableAnswer>;
 };
+
+export type StabilityObservation = {
+  caseId: string;
+  kind: "baseline" | "permutation";
+  repetition: number;
+  response: DecisionResponse;
+};
+
+export type StabilityQuestionReport = {
+  question: string;
+  runs: number;
+  consensusChoice: string | null;
+  consensusRate: number | null;
+  fixedOrderFlipRate: number | null;
+  permutationFlipRate: number | null;
+  strictArgmaxMismatches: number;
+  materialArgmaxMismatches: number;
+  maximumArgmaxGap: number;
+  maximumProbabilityDelta: number;
+};
+
+export type StabilityReport = {
+  schemaVersion: 1;
+  runs: number;
+  tolerance: number;
+  stable: boolean;
+  questions: Record<string, StabilityQuestionReport>;
+};
+
+export type StabilityProvider = (
+  request: { state: Json; model: string; questions: Record<string, Question> },
+  signal: AbortSignal,
+) => Promise<DecisionResponse>;

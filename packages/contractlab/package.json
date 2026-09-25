@@ -1,7 +1,7 @@
 {
   "name": "@gbesse/jev-contractlab",
-  "version": "0.1.0",
-  "description": "Lint, fingerprint, mutate, and regression-test Jev decision contracts.",
+  "version": "0.2.0",
+  "description": "Lint, fingerprint, mutate, and stability-test Jev decision contracts.",
   "type": "module",
   "bin": { "jev-contract": "dist/cli.js" },
   "main": "./dist/index.js",

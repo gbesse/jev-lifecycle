@@ -1,6 +1,6 @@
 {
   "name": "jev-lifecycle",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "The production lifecycle suite for Jev and compatible typed decision models.",
   "type": "module",

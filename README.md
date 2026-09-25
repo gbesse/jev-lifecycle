@@ -1,14 +1,15 @@
 # Jev Lifecycle
 
-[![CI](https://github.com/gbesse/jev-lifecycle/actions/workflows/ci.yml/badge.svg)](https://github.com/gbesse/jev-lifecycle/actions/workflows/ci.yml) ![Node](https://img.shields.io/badge/node-22%2B-339933) ![License](https://img.shields.io/badge/license-MIT-blue) ![Status](https://img.shields.io/badge/status-public_alpha-orange)
+[![CI](https://github.com/gbesse/jev-lifecycle/actions/workflows/ci.yml/badge.svg)](https://github.com/gbesse/jev-lifecycle/actions/workflows/ci.yml) ![Node](https://img.shields.io/badge/node-22%2B-339933) ![License](https://img.shields.io/badge/license-MIT-blue) ![Status](https://img.shields.io/badge/status-public_beta-blue)
 
-Five production tools for Jev and compatible typed decision models:
+Six production tools for Jev and compatible typed decision models:
 
 | Package | Purpose |
 | --- | --- |
 | [`@gbesse/jev-shadow`](packages/shadow) | Compare a production decision path with a shadow Jev path without changing side effects. |
-| [`@gbesse/jev-contractlab`](packages/contractlab) | Lint, mutate, and regression-test semantic decision contracts. |
-| [`@gbesse/jev-pulse`](packages/pulse) | Compute calibration, drift, coverage, latency, and reliability from privacy-safe decision events. |
+| [`@gbesse/jev-contractlab`](packages/contractlab) | Lint contracts and measure repeatability, option-order sensitivity, and argmax invariants. |
+| [`@gbesse/jev-router`](packages/router) | Route bounded next steps hierarchically with provider failover, confidence gates, and loop detection. |
+| [`@gbesse/jev-pulse`](packages/pulse) | Quantify calibration and recommend confidence policies from coverage, risk, and cost. |
 | [`@gbesse/jev-triageops`](packages/triageops) | Run confidence-gated support triage with deterministic policy and a human review queue. |
 | [`@gbesse/jev-set`](packages/set) | Fit calibrated multilabel thresholds with hierarchy and cardinality constraints. |
 
@@ -18,7 +19,7 @@ The suite is provider-neutral. Its JSON contracts can be used with TypeSafe Jev,
 
 ```bash
 npm install @gbesse/jev-shadow @gbesse/jev-contractlab \
-  @gbesse/jev-pulse @gbesse/jev-triageops @gbesse/jev-set
+  @gbesse/jev-router @gbesse/jev-pulse @gbesse/jev-triageops @gbesse/jev-set
 ```
 
 Each package has a programmatic API, a focused CLI, offline examples, and tests. No package sends telemetry to the maintainer.
@@ -30,6 +31,7 @@ npm install
 npm run build
 
 node packages/contractlab/dist/cli.js lint examples/contract.json
+node packages/router/dist/cli.js check --config examples/router-config.json
 node packages/pulse/dist/cli.js examples/pulse-events.jsonl \
   --labels examples/pulse-labels.jsonl --html output/pulse.html
 node packages/set/dist/cli.js fit examples/set-dataset.jsonl \
@@ -42,15 +44,16 @@ These commands make no network requests.
 ## Lifecycle
 
 ```text
-contractlab -> shadow -> triageops -> pulse
-                       \-> set
+contractlab -> shadow -> router/triageops -> pulse
+                            \-> set
 ```
 
 1. Make question contracts explicit and test their failure modes.
-2. Compare Jev with the existing production path in shadow mode.
-3. Route only bounded outcomes and send uncertain cases to review.
-4. Attach delayed labels and monitor calibration and drift.
-5. Use calibrated multilabel selection when more than one category may apply.
+2. Stress repeatability with identical calls and option-order permutations.
+3. Compare Jev with the existing production path in shadow mode.
+4. Route only bounded outcomes and keep authorization deterministic.
+5. Attach delayed labels, calibrate thresholds, and monitor drift.
+6. Use calibrated multilabel selection when more than one category may apply.
 
 ## Development
 

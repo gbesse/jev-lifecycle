@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "name": "support-tools",
+  "model": "jev-1.13.0",
+  "instructions": "Choose the single bounded next step that best matches the request. Choose review when evidence is insufficient.",
+  "routes": [
+    { "id": "search_docs", "description": "Search public product documentation", "group": "read", "risk": "low" },
+    { "id": "inspect_account", "description": "Read the customer's account state", "group": "read", "risk": "medium" },
+    { "id": "draft_reply", "description": "Draft, but do not send, a customer reply", "group": "write", "risk": "medium" },
+    { "id": "review", "description": "Escalate to a human reviewer", "group": "write", "risk": "low" }
+  ],
+  "minConfidence": 0.8,
+  "maxChoices": 8,
+  "fallbackRoute": "review",
+  "maxRepeatedSelection": 3,
+  "historyWindow": 10,
+  "providers": [
+    { "name": "typesafe", "endpoint": "https://api.typesafe.ai/v1/systemone", "apiKeyEnv": "TYPESAFE_API_KEY", "timeoutMs": 15000 }
+  ]
+}

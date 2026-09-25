@@ -1,9 +1,9 @@
 {
-  "name": "@gbesse/jev-pulse",
-  "version": "0.2.0",
-  "description": "Calibration, threshold policy, drift, coverage, latency, and reliability analytics for typed decision events.",
+  "name": "@gbesse/jev-router",
+  "version": "0.1.0",
+  "description": "Provider-neutral, confidence-gated hierarchical routing for Jev-compatible decision models.",
   "type": "module",
-  "bin": { "jev-pulse": "dist/cli.js" },
+  "bin": { "jev-router": "dist/cli.js" },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
@@ -16,10 +16,10 @@
     "prepack": "npm run build"
   },
   "engines": { "node": ">=22" },
-  "repository": { "type": "git", "url": "git+https://github.com/gbesse/jev-lifecycle.git", "directory": "packages/pulse" },
+  "repository": { "type": "git", "url": "git+https://github.com/gbesse/jev-lifecycle.git", "directory": "packages/router" },
   "bugs": { "url": "https://github.com/gbesse/jev-lifecycle/issues" },
-  "homepage": "https://github.com/gbesse/jev-lifecycle/tree/main/packages/pulse#readme",
-  "keywords": ["jev", "observability", "calibration", "drift", "decision-model"],
+  "homepage": "https://github.com/gbesse/jev-lifecycle/tree/main/packages/router#readme",
+  "keywords": ["jev", "typesafe", "router", "agent", "tool-routing", "ai"],
   "license": "MIT",
   "publishConfig": { "access": "public" }
 }
