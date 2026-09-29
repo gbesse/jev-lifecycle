@@ -1,0 +1,19 @@
+[
+  {
+    "id": "policy",
+    "value": "Escalate when the request is ambiguous.",
+    "required": true
+  },
+  {
+    "id": "customer",
+    "value": { "email": "customer@example.com", "tier": "pro" },
+    "priority": 0.8,
+    "relevance": 0.9
+  },
+  {
+    "id": "old_event",
+    "value": "Unrelated historical event",
+    "priority": 0.1,
+    "relevance": 0.1
+  }
+]
