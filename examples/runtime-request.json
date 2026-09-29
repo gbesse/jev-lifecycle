@@ -1,0 +1,11 @@
+{
+  "question": {
+    "type": "choice",
+    "text": "Choose the bounded next step",
+    "options": ["continue", "review", "stop"]
+  },
+  "state": {
+    "risk": 0.37,
+    "attempts": 1
+  }
+}

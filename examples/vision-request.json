@@ -1,0 +1,15 @@
+{
+  "question": {
+    "type": "choice",
+    "text": "What is the visible application state?",
+    "options": ["ready", "blocked", "unknown"]
+  },
+  "inputs": [
+    {
+      "id": "screen",
+      "kind": "screenshot",
+      "url": "https://example.com/screenshot.png",
+      "detail": "low"
+    }
+  ]
+}

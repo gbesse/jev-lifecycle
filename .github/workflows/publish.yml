@@ -19,6 +19,12 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run release:check
-      - run: npm publish --workspaces --access public
+      - name: Publish 0.3.0 packages
+        run: |
+          npm publish --workspace @gbesse/jev-runtime --access public
+          npm publish --workspace @gbesse/jev-conformance --access public
+          npm publish --workspace @gbesse/jev-context --access public
+          npm publish --workspace @gbesse/jev-receipts --access public
+          npm publish --workspace @gbesse/jev-vision --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

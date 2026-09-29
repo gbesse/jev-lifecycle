@@ -14,4 +14,6 @@ Use GitHub private vulnerability reporting for the repository. Do not include li
 - Authentication and authorization remain application responsibilities.
 - Semantic safety checks are advisory. Deterministic permissions must remain in code.
 - Raw state is excluded from telemetry by default. Enabling content capture can expose personal or confidential data.
+- Receipt signatures prove integrity and key possession; authorization policy and key custody remain caller responsibilities.
+- Remote visual URLs are fetched by the configured provider. Use allowlists or controlled object storage for confidential media.
 - `.env` files are ignored and must never be committed.

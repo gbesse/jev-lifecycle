@@ -1,0 +1,25 @@
+{
+  "name": "@gbesse/jev-vision",
+  "version": "0.1.0",
+  "description": "Provider-neutral typed decisions over images, screenshots, and video references.",
+  "type": "module",
+  "bin": { "jev-vision": "dist/cli.js" },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "coverage": "node --import tsx --experimental-test-coverage --test-coverage-exclude=src/types.ts --test-coverage-lines=75 --test-coverage-functions=70 --test test/*.test.ts",
+    "prepack": "npm run build"
+  },
+  "engines": { "node": ">=22" },
+  "repository": { "type": "git", "url": "git+https://github.com/gbesse/jev-lifecycle.git", "directory": "packages/vision" },
+  "bugs": { "url": "https://github.com/gbesse/jev-lifecycle/issues" },
+  "homepage": "https://github.com/gbesse/jev-lifecycle/tree/main/packages/vision#readme",
+  "keywords": ["jev", "vision", "multimodal", "screenshot", "typed-decision"],
+  "license": "MIT",
+  "publishConfig": { "access": "public" }
+}

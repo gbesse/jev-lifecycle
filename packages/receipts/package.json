@@ -1,0 +1,25 @@
+{
+  "name": "@gbesse/jev-receipts",
+  "version": "0.1.0",
+  "description": "Tamper-evident Ed25519 decision receipts for Jev-compatible systems.",
+  "type": "module",
+  "bin": { "jev-receipt": "dist/cli.js" },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "coverage": "node --import tsx --experimental-test-coverage --test-coverage-exclude=src/types.ts --test-coverage-lines=75 --test-coverage-functions=70 --test test/*.test.ts",
+    "prepack": "npm run build"
+  },
+  "engines": { "node": ">=22" },
+  "repository": { "type": "git", "url": "git+https://github.com/gbesse/jev-lifecycle.git", "directory": "packages/receipts" },
+  "bugs": { "url": "https://github.com/gbesse/jev-lifecycle/issues" },
+  "homepage": "https://github.com/gbesse/jev-lifecycle/tree/main/packages/receipts#readme",
+  "keywords": ["jev", "audit", "receipt", "ed25519", "attestation"],
+  "license": "MIT",
+  "publishConfig": { "access": "public" }
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "id": "refund-1",
+    "request": { "question": { "type": "choice", "options": ["approve", "review", "reject"] } },
+    "expected": { "kind": "choice", "value": "review" },
+    "tags": ["refund"]
+  }
+]

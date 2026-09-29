@@ -1,0 +1,25 @@
+{
+  "name": "@gbesse/jev-runtime",
+  "version": "0.1.0",
+  "description": "Preflight validation, canonical serialization, request budgeting, and resilient execution for Jev-compatible decision APIs.",
+  "type": "module",
+  "bin": { "jev-runtime": "dist/cli.js" },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "coverage": "node --import tsx --experimental-test-coverage --test-coverage-exclude=src/types.ts --test-coverage-lines=75 --test-coverage-functions=70 --test test/*.test.ts",
+    "prepack": "npm run build"
+  },
+  "engines": { "node": ">=22" },
+  "repository": { "type": "git", "url": "git+https://github.com/gbesse/jev-lifecycle.git", "directory": "packages/runtime" },
+  "bugs": { "url": "https://github.com/gbesse/jev-lifecycle/issues" },
+  "homepage": "https://github.com/gbesse/jev-lifecycle/tree/main/packages/runtime#readme",
+  "keywords": ["jev", "typesafe", "validation", "retry", "timeout", "resilience"],
+  "license": "MIT",
+  "publishConfig": { "access": "public" }
+}
