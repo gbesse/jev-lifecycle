@@ -52,6 +52,10 @@ node packages/vision/dist/cli.js validate examples/vision-request.json
 
 These commands make no network requests.
 
+## One-command preflight example
+
+`npm run demo:preflight` runs the bundled synthetic context, runtime and router checks and emits a compact JSON receipt. It demonstrates redaction, request-budget acceptance and a validated finite route configuration without making a provider call. Review the underlying fixture files before applying the pattern to production data.
+
 ## Lifecycle
 
 ```text
