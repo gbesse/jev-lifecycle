@@ -7,6 +7,7 @@
   "workspaces": ["packages/*"],
   "scripts": {
     "build": "npm run build --workspaces --if-present",
+    "demo:preflight": "npm run build && node examples/preflight-journey.mjs",
     "check": "npm run check --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
     "coverage": "npm run coverage --workspaces --if-present",
