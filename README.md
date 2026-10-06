@@ -54,6 +54,8 @@ These commands make no network requests.
 
 ## One-command preflight example
 
+After `npm run build`, run `node examples/receipt-tamper.mjs` to sign a synthetic receipt with an ephemeral local key and verify that a modified digest fails. No secret is stored or sent. / Après la compilation, cet exemple signe un reçu synthétique avec une clé locale éphémère et rejette un condensat modifié. / Tras compilar, este ejemplo firma un recibo sintético con una clave local efímera y rechaza un resumen modificado.
+
 `npm run demo:preflight` runs the bundled synthetic context, runtime and router checks and emits a compact JSON receipt. It demonstrates redaction, request-budget acceptance and a validated finite route configuration without making a provider call. Review the underlying fixture files before applying the pattern to production data.
 
 ## Lifecycle
